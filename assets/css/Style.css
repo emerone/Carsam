@@ -42,6 +42,7 @@ html{
   --content-width: min(80rem, 100%);
   color: #000c;
   font-family: sans-serif;
+  --nav-height: 6rem;
 }
 
 @media (hover) {
@@ -55,7 +56,6 @@ html{
   /* TODO design */
 
 header{
-  --nav-height: 6rem;
   --text-color: #fffe;
   --text-shadow: #000c 0 0 .5rem;
   /* display: inline-block;
@@ -65,7 +65,7 @@ header{
   box-shadow: #0002 0 0 1.5rem;
 }
 
-header > nav{
+main > nav{
   height: var(--nav-height);
   display: flex;
   justify-content: center;
@@ -77,17 +77,17 @@ header > nav{
   padding: 0rem max(calc(100vw / 2 - 40rem ), calc(100% - 100%)); */
 }
 
-header > nav > a:first-child{
+main > nav > a:first-child{
   margin-right: auto;
   /* margin-left: 1rem; */
 }
 
-header > nav > a:last-child{
+main > nav > a:last-child{
   margin-left: auto;
   /* margin-right: 1rem; */
 }
 
-header > nav > a{
+main > nav > a{
   /* font-weight: 500; */
   font-size: 1.2rem;
   letter-spacing: 1px;
@@ -96,36 +96,72 @@ header > nav > a{
   margin: 0 auto;
 }
 
-header > h1{
-  font-size: 4rem;
-  /* font-size: max(3.5vw, 2rem); */
-  max-width: max-content;
-  margin: 0rem auto;
-  height: calc(40vh - var(--nav-height));
+header > div{
   display: flex;
-  align-items: flex-end;
-  color: var(--text-color);
-  margin-left: 4rem;
-  text-shadow: var(--text-shadow);
 }
 
-header > p {
-  max-width: max(40rem, 44%);
-  text-align: left;
-  font-size: 1.3rem;
-  /* font-size: max(1.5vw, 1rem); */
-  color: var(--text-color);
-  margin: 5vh auto;
+header > div > div:first-of-type{
+  padding: 4rem;
+  padding-right: 0rem;
+  height: calc(100vh - var(--nav-height));
+  max-width: 60%;
   display: flex;
-  align-items: flex-start;
-  height: 50vh;
-  margin-left: 4rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+
+header > div > div:first-of-type > h1{
+  color: var(--text-color);
+  margin: 0rem auto;
+  font-size: 4rem;
   text-shadow: var(--text-shadow);
+  /* font-size: max(3.5vw, 2rem); */
+}
+
+header > div > div:first-of-type > p{
+  color: var(--text-color);
+  margin: 0rem auto;
+  padding-right: 15rem;
+  font-size: 1.3rem;
+  text-shadow: var(--text-shadow);
+  /* font-size: max(1.5vw, 1rem); */
+}
+#OBJECTS{
+  color: #000;
+}
+
+header > div > div:first-of-type > i{
+  text-align: center;
+  padding-right: 18rem;
+  color: #ffff;
+  text-shadow: var(--text-shadow);
+  font-size: 6rem;
+}
+
+header > div > div:last-of-type{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32rem;
+  padding: 4rem;
+}
+
+header > div > div:last-of-type > img{
+  min-width: 28rem;
+  margin: 4rem;
+  margin-bottom: 8rem;
+  color: #fffe;
+  text-shadow: var(--text-shadow);
+  font-size: 30vw;
+  background: radial-gradient(#0004 0%, #0000 80%);
+  --webkit-backdrop-filter: blur(10rem);
 }
 
 header > img{
   position: absolute;
-  top: 0%;
+  top: -11%;
   left: -.5rem;
   z-index: -10;
   width: 102%;
@@ -149,7 +185,7 @@ main > div{
 main > div:nth-of-type(1) > h2{
   width: 100%;
   text-align: center;
-  margin: 13rem auto 2rem;
+  margin: 10rem auto 2rem;
   display: inline-block;
   justify-content: center;
 }
