@@ -145,7 +145,13 @@ header > img{
   object-position: left 60%;
 }
 
-  /* Main */
+  /* main.accueille */
+
+  /* ! display none  */
+
+body.a main.accueille{
+  display: none;
+}
 
 
 main{
@@ -206,11 +212,11 @@ main > nav > a:focus::before{
 }
 
 
-main > div{
+main.accueille > div{
   margin: 0 1rem;
 }
 
-main > div:nth-of-type(1) > h2{
+main.accueille > div:nth-of-type(1) > h2{
   width: 100%;
   text-align: center;
   margin: 10rem auto 2rem;
@@ -218,19 +224,19 @@ main > div:nth-of-type(1) > h2{
   justify-content: center;
 }
 
-main > div:nth-of-type(1) > p{
+main.accueille > div:nth-of-type(1) > p{
   width: min(40rem, 100%);
   margin: 0rem auto 6rem;
   text-align: center;
 }
 
-main > div:nth-of-type(1) > div {
+main.accueille > div:nth-of-type(1) > div {
   display: flex;
   gap: 2rem;
   margin-bottom: 15rem;
 }
 
-main > div:nth-of-type(1) > div > section{
+main.accueille > div:nth-of-type(1) > div > section{
   flex: 1;
   padding: 1rem;
   padding-left: 1.25rem;
@@ -243,30 +249,30 @@ main > div:nth-of-type(1) > div > section{
 
   /* TODO design */
 
-main > div:nth-of-type(1) > div > section:hover{
+main.accueille > div:nth-of-type(1) > div > section:hover{
   background: #3338;
   color: var(--base-color-light);
   text-shadow: #0003 0rem 0rem 1rem ;
 }
 
-main > div:nth-of-type(1) > div > section > p{
+main.accueille > div:nth-of-type(1) > div > section > p{
   margin-bottom: .25rem;
 }
 
-main > div:nth-of-type(1) > div > section > h3{
+main.accueille > div:nth-of-type(1) > div > section > h3{
   padding-left: .35rem;
   margin-top: .25rem;
 }
 
-  /* main 2nd part */
+  /* main.accueille 2nd part */
 
-main > div:nth-of-type(2){
+main.accueille > div:nth-of-type(2){
   display: flex;
   gap: 4rem;
   margin-bottom: 4rem;
 }
 
-main > div:nth-of-type(2) > section{
+main.accueille > div:nth-of-type(2) > section{
   padding: 1.5rem;
   padding-right: 1rem;
   flex: 1;
@@ -277,20 +283,20 @@ main > div:nth-of-type(2) > section{
   border: 1px #00000010 solid;
 }
 
-main > div:nth-of-type(2) > section:nth-of-type(2) > h3{
+main.accueille > div:nth-of-type(2) > section:nth-of-type(2) > h3{
   margin-left: .5rem;
 }
 
-main > div:nth-of-type(2) > section > p{
+main.accueille > div:nth-of-type(2) > section > p{
   font-size: .9rem;
 }          
 
-main > div:nth-of-type(2) > section:nth-of-type(1) > div{
+main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div{
   display: flex;
   align-items: center;
 }
 
-main > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1){
+main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1){
   background: #3338;
   box-shadow: #0001 0 0 .5rem;
   border-radius: 500rem;
@@ -302,32 +308,32 @@ main > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1){
   margin-right: 0.5rem;
 }
 
-main > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1) > i {
+main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1) > i {
   transform: scale(150%) translate(6%, 0%);
   color: var(--base-color-light);
 }
 
-main > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1){
+main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1){
   transition: all .3s ease;
 }
 
-main > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1):hover{
+main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1):hover{
   /* transform: scale(110%); */
 }
 
-main > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(2){
+main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(2){
   transition: all .3s ease;
   height: 2rem;
   display: flex;
   align-items: center;
 }
 
-main > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(2):focus,
-main > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(2):hover{
+main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(2):focus,
+main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(2):hover{
   transform: translate(.5rem, -.25rem) ;
 }
 
-main > div:nth-of-type(2) > section:nth-of-type(1) > h3:last-child{
+main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > h3:last-child{
   width: max-content;
   margin: 0%;
   margin-left: auto;
@@ -340,11 +346,11 @@ main > div:nth-of-type(2) > section:nth-of-type(1) > h3:last-child{
   cursor: default;
 }
 
-main > div:nth-of-type(2) > section:nth-of-type(1) > h3:last-child::selection{
+main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > h3:last-child::selection{
   background: #0000;
 }
 
-main > div:nth-of-type(2) > section:nth-of-type(2) > a{
+main.accueille > div:nth-of-type(2) > section:nth-of-type(2) > a{
   padding: .7rem 1rem;
   margin: .75rem 2rem;
   background: #3338;
@@ -356,20 +362,20 @@ main > div:nth-of-type(2) > section:nth-of-type(2) > a{
   transition: all .3s ease;
 }
 
-main > div:nth-of-type(2) > section:nth-of-type(2) > a:focus,
-main > div:nth-of-type(2) > section:nth-of-type(2) > a:hover{
+main.accueille > div:nth-of-type(2) > section:nth-of-type(2) > a:focus,
+main.accueille > div:nth-of-type(2) > section:nth-of-type(2) > a:hover{
   background: #3336;
 }
 
-  /* main 3rd part */
+  /* main.accueille 3rd part */
 
-main > div:nth-of-type(3){
+main.accueille > div:nth-of-type(3){
   display: flex;
   gap: 4rem;
   margin-bottom: 15rem;
 }
 
-main > div:nth-of-type(3) > section{
+main.accueille > div:nth-of-type(3) > section{
   padding: 1.5rem;
   padding-right: 1rem;
   flex: 1;
@@ -380,43 +386,43 @@ main > div:nth-of-type(3) > section{
   border: 1px #00000010 solid;
 }
 
-main > div:nth-of-type(3) > section:first-of-type{
+main.accueille > div:nth-of-type(3) > section:first-of-type{
   display: flex;
   gap: 1.5rem;
 }
 
-main > div:nth-of-type(3) > section:first-of-type > div > h3:nth-of-type(1){
+main.accueille > div:nth-of-type(3) > section:first-of-type > div > h3:nth-of-type(1){
   font-size: 2rem;
   margin-top: 0%;
 }
 
-main > div:nth-of-type(3) > section:first-of-type > div > h3:nth-of-type(2){
+main.accueille > div:nth-of-type(3) > section:first-of-type > div > h3:nth-of-type(2){
   margin-left: .5rem;
 }
 
-main > div:nth-of-type(3) > section > *{
+main.accueille > div:nth-of-type(3) > section > *{
   flex: 1;
   width: max(50%, 13rem);
 }
 
-  /* main 4th part */
+  /* main.accueille 4th part */
 
-main > div:nth-of-type(4){
+main.accueille > div:nth-of-type(4){
   margin-bottom: 6rem;
 }
 
-main > div:nth-of-type(4) > h2{
+main.accueille > div:nth-of-type(4) > h2{
   width: max-content;
   margin: 0 auto;
 }
 
-main > div:nth-of-type(4) > div{
+main.accueille > div:nth-of-type(4) > div{
   display: flex;
   gap: 2rem;
   padding: 6rem;
 }
 
-main > div:nth-of-type(4) > div > section{
+main.accueille > div:nth-of-type(4) > div > section{
   padding: 1.5rem;
   padding-right: 1rem;
   flex: 1;
@@ -429,29 +435,69 @@ main > div:nth-of-type(4) > div > section{
   border: 1px #00000010 solid;
 }
 
-main > div:nth-of-type(4) > div > section > div{
+main.accueille > div:nth-of-type(4) > div > section > div{
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
 }
 
-main > div:nth-of-type(4) > div > section > h3{
+main.accueille > div:nth-of-type(4) > div > section > h3{
   margin-left: .5rem;
 }
 
-main > div:nth-of-type(4) > div > section > p{
+main.accueille > div:nth-of-type(4) > div > section > p{
   margin-bottom: auto;
 }
 
-main > div:nth-of-type(4) > div > section > div > * > *:not(i){
+main.accueille > div:nth-of-type(4) > div > section > div > * > *:not(i){
   margin: 0 1rem;
 }
 
-main > div:nth-of-type(4) > div > section > div > * > i{
+main.accueille > div:nth-of-type(4) > div > section > div > * > i{
   color: #e2e561;
 }
 
+  /* main À-propos  */
+
+main.a-propos > div{
+  display: flex;
+  gap: 4rem;
+  padding: 1rem;
+}
+
+main.a-propos > div > div{
+  text-align: center;
+  width: 100%;
+}
+
+main.a-propos > div > div:first-of-type > h2{
+  margin-bottom: 2.5rem;
+}
+
+main.a-propos > div > div:first-of-type > p{
+  width: 90%;
+  margin: 0 auto 2rem;
+}
+
+main.a-propos > div > div:first-of-type > div{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+main.a-propos > div > div:first-of-type > div > *{
+  flex-grow: 1;
+}
+
+main.a-propos > div > div:first-of-type > div > a{
+  color: #000b;
+}
+
+main.a-propos > div > div:first-of-type > div > a > i{
+  color: #000;
+}
 
 
           /* Animation */
