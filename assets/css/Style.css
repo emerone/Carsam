@@ -5,7 +5,7 @@
 }
 
 *::selection{
-  background: #0002;
+  background: #0001;
 }
 
 a{
@@ -149,7 +149,8 @@ header > img{
 
   /* ! display none  */
 
-body.a main.accueille{
+body.a main.accueille,
+body.a main.a-propos{
   display: none;
 }
 
@@ -499,13 +500,156 @@ main.a-propos > div > div:first-of-type > div > a > i{
   color: #000;
 }
 
+  /* main Catalogue  */
+
+main.catalogue{
+  text-align: center;
+}
+
+main.catalogue > div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 4rem 2rem;
+  padding: 2rem;
+}
+
+main.catalogue > h2{
+  margin-bottom: 4rem;
+}
+main.catalogue > div > div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: .5rem;
+  width: 30%;
+  min-width: 18rem;
+  
+  box-shadow: #00000010 0rem 0rem .5rem;
+  border: 1px #00000010 solid;
+  border-radius: .25rem;
+}
+
+main.catalogue > div > div > img{
+  width: 100%;
+  cursor: pointer;
+  transition: all .75s ease;
+}
+
+main.catalogue > div > div > img:hover{
+  transform: scale(105%);
+}
+
+main.catalogue > div > div > img::selection{
+  background: #0000;
+}
+
+main.catalogue > div > div > button {
+  cursor: pointer;
+  padding: .7rem 1rem;
+  background: #3331;
+  margin-bottom: .5rem;
+  transition: all .25s ease, width .5s ease;
+  width: 5.5rem;
+  color: #000e;
+  
+  box-shadow: #00000006 0rem 0rem .5rem;
+  border: 1px #00000006 solid;
+  border-radius: .25rem;
+}
+
+main.catalogue > div > div > button:hover {
+  background: #3332;
+  color: #000f;
+  width: 6.5em;
+  
+  box-shadow: #0000000a 0rem 0rem .5rem;
+  border: 1px #0000000a solid;
+}
+
+main.catalogue > div > div > button::selection {
+  background: #0000;
+}
+
+  /* dialogs */
+
+dialog{
+  animation: start-dialog 1s ease both;
+  outline: none;
+  padding: 0%;
+  width: 40rem;
+  box-shadow: #00000018 0rem 0rem 1rem;
+  border: 1px #00000018 solid;
+}
+
+dialog h2{
+  color: #000c;
+  border-radius: .25rem;
+}
+
+dialog > div{
+  padding: 2rem;
+  padding-bottom: 1rem;
+  gap: 2rem;
+}
+
+dialog > div > div > img{
+  width: 20rem;
+  transition: all .75s ease;
+}
+
+dialog > div > div > img:hover{
+  transform: scale(105%);
+}
+
+dialog > div > div > img::selection{
+  background: #0000;
+}
+
+dialog > div > div > button {
+  margin-top: .5rem;
+  cursor: pointer;
+  padding: .7rem 1rem;
+  background: #3331;
+  margin-bottom: .5rem;
+  transition: all .25s ease, width .5s ease;
+  width: 5.5rem;
+  color: #000e;
+  
+  box-shadow: #00000006 0rem 0rem .5rem;
+  border: 1px #00000006 solid;
+  border-radius: .25rem;
+}
+
+dialog > div > div > button::selection{
+  background: #0000;
+}
+
+dialog > div > div > button:hover {
+  background: #3332;
+  color: #000f;
+  width: 6.5em;
+  
+  box-shadow: #0000000a 0rem 0rem .5rem;
+  border: 1px #0000000a solid;
+}
+
+main.catalogue > div > div > button::selection {
+  background: #0000;
+}
+
 
           /* Animation */
 
-@keyframes name {
+@keyframes start-dialog {
   0%{
+    transform: translatey(-5rem);
+    opacity: 0;
   }
   100%{
+    transform: translatey(0rem);
+    opacity: 1;
   }
 }
 
