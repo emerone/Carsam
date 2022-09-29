@@ -722,5 +722,5 @@ main.catalogue > div > div > button::selection {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #aaa;
+  background: #aaaf;
 }
