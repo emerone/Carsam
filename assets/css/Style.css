@@ -463,8 +463,11 @@ main.accueille > div:nth-of-type(4) > div > section > div > * > i{
 
 main.a-propos > div{
   display: flex;
+  align-items: center;
   gap: 4rem;
   padding: 1rem;
+  margin-block: 2rem;
+  margin-block-start: 1rem;
 }
 
 main.a-propos > div > div{
