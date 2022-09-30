@@ -2,6 +2,7 @@
 
 :is(*,*::after,*::after){
   box-sizing: border-box;
+  text-shadow: #0001 0 0 .5rem;
 }
 
 *::selection{
@@ -113,6 +114,7 @@ header > div > div:first-of-type > i{
   color: #ffff;
   text-shadow: var(--text-shadow);
   font-size: 6rem;
+  margin-right: 14rem;
 }
 
 header > div > div:last-of-type{
@@ -210,6 +212,9 @@ main > nav > a::before{
 main > nav > a:hover::before,
 main > nav > a:focus::before{
   transform: scale(1);
+}
+
+main > h2{
 }
 
 
@@ -532,6 +537,10 @@ main.catalogue > div > div{
   box-shadow: #00000010 0rem 0rem .5rem;
   border: 1px #00000010 solid;
   border-radius: .25rem;
+}
+
+main.catalogue > div > div > *{
+  margin-block: auto;
 }
 
 main.catalogue > div > div > img{
