@@ -8,7 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Carsam</title>
 </head>
-<body class="a">
+<body class="b">
     <!-- header -->
     <header>
         <div>
@@ -25,9 +25,9 @@
     </header>
     <!-- main -->
     <main>
-        <nav><a href="#Accueille">Accueille</a><a href="#Catalogue">Catalogue</a><a href="#À-propos">À-propos</a></nav>
+        <nav><a href="#Accueil">accueil</a><a href="#Catalogue">Catalogue</a><a href="#À-propos">À-propos</a></nav>
     </main>
-    <main class="accueille" id="main">
+    <main class="accueil" id="main">
         <!-- cards -->
         <div>
             <h2>Nos atouts</h2>
@@ -429,21 +429,6 @@
         
     </footer>
 
-    <script>
-        Salut = setInterval(() => {
-            console.log("Salut")
-        }, 1000);
-
-        const body = document.querySelector("body")
-
-        body.addEventListener('click', function(){
-            clearInterval(Salut);
-            console.info("click")
-            
-            Salut = setInterval(() => {
-                console.log("Salut")
-            }, 1000);
-        })
-    </script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

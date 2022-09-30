@@ -42,6 +42,7 @@ html{
   --base-color-dark: #000c;
   --content-width: min(80rem, 100%);
   --nav-height: 6rem;
+  --animation-duration: 1.5s;
   scroll-behavior: smooth;
   color: #000c;
   font-family: sans-serif;
@@ -147,13 +148,37 @@ header > img{
   object-position: left 60%;
 }
 
-  /* main.accueille */
+  /* main.accueil */
 
   /* ! display none  */
 
-body.a main.accueille,
+body.a main.catalogue,
 body.a main.a-propos{
   display: none;
+}
+
+main:is(.catalogue, .accueil, .a-propos){
+  animation: opacity-start var(--animation-duration) ease both;
+}
+
+main:is(.opacity-end){
+  animation: opacity-end var(--animation-duration) ease both;
+}
+
+main:is(.from-right){
+  animation: from-right var(--animation-duration) ease both;
+}
+
+main:is(.to-right){
+  animation: to-right var(--animation-duration) ease both;
+}
+
+main:is(.from-left){
+  animation: from-left var(--animation-duration) ease both;
+}
+
+main:is(.to-left){
+  animation: to-left var(--animation-duration) ease both;
 }
 
 
@@ -161,6 +186,7 @@ main{
   width: var(--content-width);
   margin: 0rem auto;
 }
+
 
 main > nav{
   height: var(--nav-height);
@@ -211,18 +237,15 @@ main > nav > a::before{
 
 main > nav > a:hover::before,
 main > nav > a:focus::before{
-  transform: scale(1);
-}
-
-main > h2{
+  transform: scalex(1);
 }
 
 
-main.accueille > div{
+main.accueil > div{
   margin: 0 1rem;
 }
 
-main.accueille > div:nth-of-type(1) > h2{
+main.accueil > div:nth-of-type(1) > h2{
   width: 100%;
   text-align: center;
   margin: 10rem auto 2rem;
@@ -230,19 +253,19 @@ main.accueille > div:nth-of-type(1) > h2{
   justify-content: center;
 }
 
-main.accueille > div:nth-of-type(1) > p{
+main.accueil > div:nth-of-type(1) > p{
   width: min(40rem, 100%);
   margin: 0rem auto 6rem;
   text-align: center;
 }
 
-main.accueille > div:nth-of-type(1) > div {
+main.accueil > div:nth-of-type(1) > div {
   display: flex;
   gap: 2rem;
   margin-bottom: 15rem;
 }
 
-main.accueille > div:nth-of-type(1) > div > section{
+main.accueil > div:nth-of-type(1) > div > section{
   flex: 1;
   padding: 1rem;
   padding-left: 1.25rem;
@@ -255,30 +278,30 @@ main.accueille > div:nth-of-type(1) > div > section{
 
   /* TODO design */
 
-main.accueille > div:nth-of-type(1) > div > section:hover{
+main.accueil > div:nth-of-type(1) > div > section:hover{
   background: #3338;
   color: var(--base-color-light);
   text-shadow: #0003 0rem 0rem 1rem ;
 }
 
-main.accueille > div:nth-of-type(1) > div > section > p{
+main.accueil > div:nth-of-type(1) > div > section > p{
   margin-bottom: .25rem;
 }
 
-main.accueille > div:nth-of-type(1) > div > section > h3{
+main.accueil > div:nth-of-type(1) > div > section > h3{
   padding-left: .35rem;
   margin-top: .25rem;
 }
 
-  /* main.accueille 2nd part */
+  /* main.accueil 2nd part */
 
-main.accueille > div:nth-of-type(2){
+main.accueil > div:nth-of-type(2){
   display: flex;
   gap: 4rem;
   margin-bottom: 4rem;
 }
 
-main.accueille > div:nth-of-type(2) > section{
+main.accueil > div:nth-of-type(2) > section{
   padding: 1.5rem;
   padding-right: 1rem;
   flex: 1;
@@ -289,20 +312,20 @@ main.accueille > div:nth-of-type(2) > section{
   border: 1px #00000010 solid;
 }
 
-main.accueille > div:nth-of-type(2) > section:nth-of-type(2) > h3{
+main.accueil > div:nth-of-type(2) > section:nth-of-type(2) > h3{
   margin-left: .5rem;
 }
 
-main.accueille > div:nth-of-type(2) > section > p{
+main.accueil > div:nth-of-type(2) > section > p{
   font-size: .9rem;
 }          
 
-main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div{
+main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > div{
   display: flex;
   align-items: center;
 }
 
-main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1){
+main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1){
   background: #3338;
   box-shadow: #0001 0 0 .5rem;
   border-radius: 500rem;
@@ -314,32 +337,32 @@ main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-ty
   margin-right: 0.5rem;
 }
 
-main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1) > i {
+main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1) > i {
   transform: scale(150%) translate(6%, 0%);
   color: var(--base-color-light);
 }
 
-main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1){
+main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1){
   transition: all .3s ease;
 }
 
-main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1):hover{
+main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1):hover{
   /* transform: scale(110%); */
 }
 
-main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(2){
+main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(2){
   transition: all .3s ease;
   height: 2rem;
   display: flex;
   align-items: center;
 }
 
-main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(2):focus,
-main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(2):hover{
+main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(2):focus,
+main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(2):hover{
   transform: translate(.5rem, -.25rem) ;
 }
 
-main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > h3:last-child{
+main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > h3:last-child{
   width: max-content;
   margin: 0%;
   margin-left: auto;
@@ -352,11 +375,11 @@ main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > h3:last-child{
   cursor: default;
 }
 
-main.accueille > div:nth-of-type(2) > section:nth-of-type(1) > h3:last-child::selection{
+main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > h3:last-child::selection{
   background: #0000;
 }
 
-main.accueille > div:nth-of-type(2) > section:nth-of-type(2) > a{
+main.accueil > div:nth-of-type(2) > section:nth-of-type(2) > a{
   padding: .7rem 1rem;
   margin: .75rem 2rem;
   background: #3338;
@@ -368,20 +391,20 @@ main.accueille > div:nth-of-type(2) > section:nth-of-type(2) > a{
   transition: all .3s ease;
 }
 
-main.accueille > div:nth-of-type(2) > section:nth-of-type(2) > a:focus,
-main.accueille > div:nth-of-type(2) > section:nth-of-type(2) > a:hover{
+main.accueil > div:nth-of-type(2) > section:nth-of-type(2) > a:focus,
+main.accueil > div:nth-of-type(2) > section:nth-of-type(2) > a:hover{
   background: #3336;
 }
 
-  /* main.accueille 3rd part */
+  /* main.accueil 3rd part */
 
-main.accueille > div:nth-of-type(3){
+main.accueil > div:nth-of-type(3){
   display: flex;
   gap: 4rem;
   margin-bottom: 15rem;
 }
 
-main.accueille > div:nth-of-type(3) > section{
+main.accueil > div:nth-of-type(3) > section{
   padding: 1.5rem;
   padding-right: 1rem;
   flex: 1;
@@ -392,43 +415,43 @@ main.accueille > div:nth-of-type(3) > section{
   border: 1px #00000010 solid;
 }
 
-main.accueille > div:nth-of-type(3) > section:first-of-type{
+main.accueil > div:nth-of-type(3) > section:first-of-type{
   display: flex;
   gap: 1.5rem;
 }
 
-main.accueille > div:nth-of-type(3) > section:first-of-type > div > h3:nth-of-type(1){
+main.accueil > div:nth-of-type(3) > section:first-of-type > div > h3:nth-of-type(1){
   font-size: 2rem;
   margin-top: 0%;
 }
 
-main.accueille > div:nth-of-type(3) > section:first-of-type > div > h3:nth-of-type(2){
+main.accueil > div:nth-of-type(3) > section:first-of-type > div > h3:nth-of-type(2){
   margin-left: .5rem;
 }
 
-main.accueille > div:nth-of-type(3) > section > *{
+main.accueil > div:nth-of-type(3) > section > *{
   flex: 1;
   width: max(50%, 13rem);
 }
 
-  /* main.accueille 4th part */
+  /* main.accueil 4th part */
 
-main.accueille > div:nth-of-type(4){
+main.accueil > div:nth-of-type(4){
   margin-bottom: 6rem;
 }
 
-main.accueille > div:nth-of-type(4) > h2{
+main.accueil > div:nth-of-type(4) > h2{
   width: max-content;
   margin: 0 auto;
 }
 
-main.accueille > div:nth-of-type(4) > div{
+main.accueil > div:nth-of-type(4) > div{
   display: flex;
   gap: 2rem;
   padding: 6rem;
 }
 
-main.accueille > div:nth-of-type(4) > div > section{
+main.accueil > div:nth-of-type(4) > div > section{
   padding: 1.5rem;
   padding-right: 1rem;
   flex: 1;
@@ -441,26 +464,26 @@ main.accueille > div:nth-of-type(4) > div > section{
   border: 1px #00000010 solid;
 }
 
-main.accueille > div:nth-of-type(4) > div > section > div{
+main.accueil > div:nth-of-type(4) > div > section > div{
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
 }
 
-main.accueille > div:nth-of-type(4) > div > section > h3{
+main.accueil > div:nth-of-type(4) > div > section > h3{
   margin-left: .5rem;
 }
 
-main.accueille > div:nth-of-type(4) > div > section > p{
+main.accueil > div:nth-of-type(4) > div > section > p{
   margin-bottom: auto;
 }
 
-main.accueille > div:nth-of-type(4) > div > section > div > * > *:not(i){
+main.accueil > div:nth-of-type(4) > div > section > div > * > *:not(i){
   margin: 0 1rem;
 }
 
-main.accueille > div:nth-of-type(4) > div > section > div > * > i{
+main.accueil > div:nth-of-type(4) > div > section > div > * > i{
   color: #e2e561;
 }
 
@@ -587,7 +610,7 @@ main.catalogue > div > div > button::selection {
   /* dialogs */
 
 dialog{
-  animation: start-dialog 1s ease both;
+  animation: start-dialog var(--animation-duration) ease both;
   outline: none;
   padding: 0%;
   width: 40rem;
@@ -664,6 +687,82 @@ main.catalogue > div > div > button::selection {
     opacity: 1;
   }
 }
+
+@keyframes end-dialog {
+  0%{
+    transform: translatey(0rem);
+    opacity: 1;
+  }
+  100%{
+    transform: translatey(5rem);
+    opacity: 0;
+  }
+}
+
+@keyframes opacity-end {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes opacity-start {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes to-right {
+  0%{
+    transform: translatex(0rem);
+  }
+  100%{
+    transform: translatex(5rem);
+  }
+}
+
+@keyframes from-right {
+  0%{
+    transform: translatex(5rem);
+  }
+  100%{
+    transform: translatex(0rem);
+  }
+}
+
+@keyframes to-left {
+  0%{
+    transform: translatex(0rem);
+  }
+  100%{
+    transform: translatex(-5rem);
+  }
+}
+
+@keyframes from-left {
+  0%{
+    transform: translatex(-5rem);
+  }
+  100%{
+    transform: translatex(0rem);
+  }
+}
+
+@keyframes scalex {
+  0%{
+    transform: scalex(0px);
+  }
+  100%{
+    transform: scalex(100%);
+  }
+}
+
+
 
           /* Responsive */
 
