@@ -36,16 +36,18 @@ i{
   transform: translateY(7.5%);
 }
 
-html{
+html, body{
   --background-black: #1c1918;
   --base-color-light: #fffc;
   --base-color-dark: #000c;
   --content-width: min(80rem, 100%);
   --nav-height: 6rem;
-  --animation-duration: 1.5s;
+  --animation-duration: 1s;
   scroll-behavior: smooth;
   color: #000c;
   font-family: sans-serif;
+  overflow-x: hidden;
+  transition: height 1s ease;
 }
 
 @media (hover) {
@@ -157,28 +159,30 @@ body.a main.a-propos{
   display: none;
 }
 
-main:is(.catalogue, .accueil, .a-propos){
-  animation: opacity-start var(--animation-duration) ease both;
+body.b main.accueil,
+body.b main.a-propos{
+  display: none;
 }
 
-main:is(.opacity-end){
-  animation: opacity-end var(--animation-duration) ease both;
+body.c main.catalogue,
+body.c main.accueil{
+  display: none;
 }
 
-main:is(.from-right){
-  animation: from-right var(--animation-duration) ease both;
+main:is(.from-left-start){
+  animation: from-left-start var(--animation-duration) ease normal;
 }
 
-main:is(.to-right){
-  animation: to-right var(--animation-duration) ease both;
+main:is(.from-right-start){
+  animation: from-right-start var(--animation-duration) ease normal;
 }
 
-main:is(.from-left){
-  animation: from-left var(--animation-duration) ease both;
+main:is(.to-right-end){
+  animation: to-right-end var(--animation-duration) ease normal;
 }
 
-main:is(.to-left){
-  animation: to-left var(--animation-duration) ease both;
+main:is(.to-left-end){
+  animation: to-left-end var(--animation-duration) ease normal;
 }
 
 
@@ -235,8 +239,7 @@ main > nav > a::before{
   transition: all .3s ease;
 }
 
-main > nav > a:hover::before,
-main > nav > a:focus::before{
+main > nav > a:hover::before{
   transform: scalex(1);
 }
 
@@ -346,10 +349,6 @@ main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type
   transition: all .3s ease;
 }
 
-main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(1):hover{
-  /* transform: scale(110%); */
-}
-
 main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(2){
   transition: all .3s ease;
   height: 2rem;
@@ -357,7 +356,6 @@ main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type
   align-items: center;
 }
 
-main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(2):focus,
 main.accueil > div:nth-of-type(2) > section:nth-of-type(1) > div > a:nth-of-type(2):hover{
   transform: translate(.5rem, -.25rem) ;
 }
@@ -391,7 +389,6 @@ main.accueil > div:nth-of-type(2) > section:nth-of-type(2) > a{
   transition: all .3s ease;
 }
 
-main.accueil > div:nth-of-type(2) > section:nth-of-type(2) > a:focus,
 main.accueil > div:nth-of-type(2) > section:nth-of-type(2) > a:hover{
   background: #3336;
 }
@@ -451,7 +448,9 @@ main.accueil > div:nth-of-type(4) > div{
   padding: 6rem;
 }
 
-main.accueil > div:nth-of-type(4) > div > section{
+  /* avis */
+
+.cards{
   padding: 1.5rem;
   padding-right: 1rem;
   flex: 1;
@@ -464,26 +463,26 @@ main.accueil > div:nth-of-type(4) > div > section{
   border: 1px #00000010 solid;
 }
 
-main.accueil > div:nth-of-type(4) > div > section > div{
+.cards > div{
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
 }
 
-main.accueil > div:nth-of-type(4) > div > section > h3{
+.cards > h3{
   margin-left: .5rem;
 }
 
-main.accueil > div:nth-of-type(4) > div > section > p{
+.cards > p{
   margin-bottom: auto;
 }
 
-main.accueil > div:nth-of-type(4) > div > section > div > * > *:not(i){
+.cards > div > * > *:not(i){
   margin: 0 1rem;
 }
 
-main.accueil > div:nth-of-type(4) > div > section > div > * > i{
+.cards > div > * > i{
   color: #e2e561;
 }
 
@@ -699,57 +698,45 @@ main.catalogue > div > div > button::selection {
   }
 }
 
-@keyframes opacity-end {
-  0%{
-    opacity: 1;
-  }
-  100%{
-    opacity: 0;
-  }
-}
-
-@keyframes opacity-start {
+@keyframes from-left-start {
   0%{
     opacity: 0;
+    transform: translatex(-5rem);
   }
   100%{
     opacity: 1;
-  }
-}
-
-@keyframes to-right {
-  0%{
-    transform: translatex(0rem);
-  }
-  100%{
-    transform: translatex(5rem);
-  }
-}
-
-@keyframes from-right {
-  0%{
-    transform: translatex(5rem);
-  }
-  100%{
     transform: translatex(0rem);
   }
 }
 
-@keyframes to-left {
+@keyframes from-right-start {
+  0%{
+    opacity: 0;
+    transform: translatex(5rem);
+  }
+  100%{
+    transform: translatex(0rem);
+    opacity: 1;
+  }
+}
+
+@keyframes to-left-end {
   0%{
     transform: translatex(0rem);
   }
   100%{
     transform: translatex(-5rem);
+    opacity: 0;
   }
 }
 
-@keyframes from-left {
+@keyframes to-right-end {
   0%{
-    transform: translatex(-5rem);
+    transform: translatex(0rem);
   }
   100%{
-    transform: translatex(0rem);
+    transform: translatex(5rem);
+    opacity: 0;
   }
 }
 
