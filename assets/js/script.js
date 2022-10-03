@@ -18,6 +18,8 @@ const containerOpinion = document.querySelector('main.accueil > div:nth-of-type(
 
 console.log(containerOpinion)
 
+    //  ! laoding the good part when the web site laod or reload with hash
+
 if ( window.location.hash == "#Catalogue"){
 
     // !        loading with animation
@@ -84,9 +86,7 @@ if ( window.location.hash == "#%C3%80-propos"){
 
 }
 
-navAccueil.addEventListener('click',() => {
-    console.log(window.location.hash)
-})
+    // ! Nav switchs
 
 navAccueil.addEventListener('click',() => {
     if(body.className == "b"){
@@ -162,6 +162,8 @@ for(let i=0;i<navsApropos.length; i++){
     })
 }
 
+    // ! Options functions
+
 let i = 0
 const classes = "abcdefg"
 
@@ -178,7 +180,7 @@ btnsOpinion[0].addEventListener("click", () => {
     }
 })
 
-btnsOpinion[1].addEventListener("click", () => {
+function opinionFuction() {
     if(i == classes.length - 1){
         i = 0
         containerOpinion.setAttribute("class", classes[i])
@@ -187,4 +189,16 @@ btnsOpinion[1].addEventListener("click", () => {
         i++
         containerOpinion.setAttribute("class", classes[i])
     }
+}
+
+btnsOpinion[1].addEventListener("click", () => {
+    opinionFuction()
+    
+    Interval = setInterval(() => {
+        opinionFuction()
+    }, 8000);
 })
+
+Interval = setInterval(() => {
+    opinionFuction()
+}, 8000);

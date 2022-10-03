@@ -464,7 +464,7 @@ main.accueil > div:nth-of-type(4) > h2{
 
 main.accueil > div:nth-of-type(4) > div{
   position: relative;
-  --gap: 6rem;
+  --gap: 10rem;
   --padding: 4rem;
   --width: 28rem;
   display: flex;
@@ -484,7 +484,6 @@ main.accueil > div:nth-of-type(4) > div > span:first-of-type{
   transition: all .2s .8s ease;
   display: flex;
   align-items: center;
-  background: #fff;
 }
 
 main.accueil > div:nth-of-type(4) > div > span:last-of-type{
@@ -497,13 +496,21 @@ main.accueil > div:nth-of-type(4) > div > span:last-of-type{
   transition: all .2s .8s ease;
   display: flex;
   align-items: center;
-  background: #fff;
 }
 
 main.accueil > div:nth-of-type(4) > div > span > i {
   font-size: 4rem;
   transform: translate(-1rem);
+  transition: all .5s ease;
 }
+
+@media (pointer: fine) {
+  main.accueil > div:nth-of-type(4) > div > span > i:hover{
+    transform: translate(-1.5rem);
+    font-size: 5rem;
+  }
+}
+
 
 main.accueil > div:nth-of-type(4) > div > div {
   display: flex;
