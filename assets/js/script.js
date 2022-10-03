@@ -8,8 +8,12 @@ const navApropos = document.querySelector('a[href="#À-propos"]');
 const bodyApropos = document.querySelector('main.a-propos');  
 const body = document.querySelector('body');
 
+//     #Accueil
+//     #Catalogue
+//     #%C3%80-propos
+
 navAccueil.addEventListener('click',() => {
-    console.log(window.location.href)
+    console.log(window.location.hash)
 })
 
 navAccueil.addEventListener('click',() => {

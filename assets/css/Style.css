@@ -191,6 +191,10 @@ main{
   margin: 0rem auto;
 }
 
+main:first-of-type{
+  margin-bottom: 8rem;
+}
+
 
 main > nav{
   height: var(--nav-height);
@@ -207,6 +211,18 @@ main > nav{
 main > nav > a:first-child{
   margin-right: auto;
   /* margin-left: 1rem; */
+}
+
+body.a > main > nav > a:nth-of-type(1)::before{
+  transform: scale(1);
+}
+
+body.b > main > nav > a:nth-of-type(2)::before{
+  transform: scale(1);
+}
+
+body.c > main > nav > a:nth-of-type(3)::before{
+  transform: scale(1);
 }
 
 main > nav > a:last-child{
@@ -232,11 +248,11 @@ main > nav > a::before{
   bottom: 15%;
   left: 0%;
   width: 100%;
-  height: .25rem;
+  height: 4px;
   background: var(--base-color-dark);
   border-radius: 30rem;
   transform: scalex(0);
-  transition: all .3s ease;
+  transition: all .5s ease;
 }
 
 main > nav > a:hover::before{
@@ -251,7 +267,6 @@ main.accueil > div{
 main.accueil > div:nth-of-type(1) > h2{
   width: 100%;
   text-align: center;
-  margin: 10rem auto 2rem;
   display: inline-block;
   justify-content: center;
 }
@@ -263,13 +278,14 @@ main.accueil > div:nth-of-type(1) > p{
 }
 
 main.accueil > div:nth-of-type(1) > div {
+  --gap: 2rem;
   display: flex;
-  gap: 2rem;
+  gap: var(--gap);
   margin-bottom: 15rem;
 }
 
 main.accueil > div:nth-of-type(1) > div > section{
-  flex: 1;
+  width: calc(50% - var(--gap) / 2);
   padding: 1rem;
   padding-left: 1.25rem;
   border-radius: .25rem;
@@ -277,6 +293,8 @@ main.accueil > div:nth-of-type(1) > div > section{
   border: 1px #00000010 solid;
   transition: all .3s ease;
   text-shadow: #0000 0rem 0rem 1rem ;
+  max-width: 21rem;
+  margin-inline: auto;
 }
 
   /* TODO design */
@@ -298,16 +316,19 @@ main.accueil > div:nth-of-type(1) > div > section > h3{
 
   /* main.accueil 2nd part */
 
+main.accueil{
+  --gap: 4rem;
+}
+
 main.accueil > div:nth-of-type(2){
   display: flex;
-  gap: 4rem;
-  margin-bottom: 4rem;
+  gap: var(--gap);
+  margin-bottom: var(--gap);
 }
 
 main.accueil > div:nth-of-type(2) > section{
   padding: 1.5rem;
-  padding-right: 1rem;
-  flex: 1;
+  width: 100%;
 
   /* TODO design */
   
@@ -397,14 +418,13 @@ main.accueil > div:nth-of-type(2) > section:nth-of-type(2) > a:hover{
 
 main.accueil > div:nth-of-type(3){
   display: flex;
-  gap: 4rem;
+  gap: var(--gap);
   margin-bottom: 15rem;
 }
 
 main.accueil > div:nth-of-type(3) > section{
   padding: 1.5rem;
-  padding-right: 1rem;
-  flex: 1;
+  width: 100%;
 
   /* TODO design */
   
@@ -428,7 +448,6 @@ main.accueil > div:nth-of-type(3) > section:first-of-type > div > h3:nth-of-type
 
 main.accueil > div:nth-of-type(3) > section > *{
   flex: 1;
-  width: max(50%, 13rem);
 }
 
   /* main.accueil 4th part */
@@ -443,17 +462,18 @@ main.accueil > div:nth-of-type(4) > h2{
 }
 
 main.accueil > div:nth-of-type(4) > div{
+  --gap: 2rem;
+  --padding: 6rem;
   display: flex;
-  gap: 2rem;
-  padding: 6rem;
+  gap: var(--gap);
+  padding: var(--padding);
 }
 
   /* avis */
 
 .cards{
   padding: 1.5rem;
-  padding-right: 1rem;
-  flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
 
@@ -504,6 +524,7 @@ main.a-propos > div > div{
 
 main.a-propos > div > div:first-of-type > h2{
   margin-bottom: 2.5rem;
+  margin-top: .5rem;
 }
 
 main.a-propos > div > div:first-of-type > p{
@@ -546,6 +567,7 @@ main.catalogue > div{
 
 main.catalogue > h2{
   margin-bottom: 4rem;
+  display: inline-block;
 }
 main.catalogue > div > div{
   display: flex;
@@ -753,18 +775,107 @@ main.catalogue > div > div > button::selection {
 
           /* Responsive */
 
-@media screen and (max-width:1024px) {
-  html{
+@media screen and (max-width:1094px) {
+  header > div > div:last-of-type{
+    display: none;
+  }
+  header > div > div:first-of-type{
+    max-width: 100%;
+    text-align: center;
+  }
+  header > div > div:first-of-type > p{
+    padding-inline: 6rem;
+  }
+  header > div > div:first-of-type{
+    padding: 4rem;
+  }
+  header > div > div:first-of-type > i{
+    margin-inline: auto;
+  }
+  main.accueil > div:nth-of-type(1) > div{
+    flex-wrap: wrap;
+  }
+  main.accueil > div:nth-of-type(2){
+    flex-wrap: wrap;
+  }  
+  main.accueil > div:nth-of-type(2) > *{
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+  main.accueil > div:nth-of-type(3){
+    flex-wrap: wrap;
+  }  
+  main.accueil > div:nth-of-type(3) > *{
+    max-width: 40rem;
+    margin-inline: auto;
+    flex: unset;
+  }
+  main.a-propos > div{
+    flex-direction: column;
+  }
+  main.a-propos > div > div{
+    width: 40rem;
+  }
+  main.a-propos > div:first-of-type > div:last-of-type{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  main.accueil > div:nth-of-type(1) > div{
+    margin-block-end: 8rem;
   }
 }
 
 @media screen and (max-width:826px) {
-  html{
+  main.accueil > div:nth-of-type(4) > h2{
+    margin-bottom: 4rem;
+  }
+  main.accueil > div:nth-of-type(4) > div{
+    --padding: 2rem;
+  }
+  main.a-propos > div:first-of-type > div:last-of-type{
+    transform: scale(.9);
   }
 }
 
 @media screen and (max-width:632px) {
-  html{
+  main.accueil > div:nth-of-type(3) > section:first-of-type{
+    flex-direction: column;
+    max-width: 18rem;
+    margin-inline: auto;
+  }
+  main.accueil > div:nth-of-type(1) > div > section{
+    width: unset;
+  }
+  header > div > div:first-of-type{
+    padding: 1rem;
+  }
+  main.accueil > div:nth-of-type(4) > h2{
+    margin-block-end: 5rem;
+  }
+  main.accueil > div:nth-of-type(4) > div{
+    --padding: 1rem;
+  }
+  main.accueil > div:nth-of-type(1) > div{
+    margin-bottom: 5rem;
+  }
+  header > div > div:first-of-type > p{
+    display: none;
+  }
+  main.a-propos > div:first-of-type > div:last-of-type{
+    transform: scale(.7);
+  }
+  main.a-propos > div > div{
+    width: 30rem;
+  }
+}
+
+@media screen and (max-width:468px) {
+  main.a-propos > div:first-of-type > div:last-of-type{
+    transform: scale(.5);
+  }
+  main.a-propos > div > div{
+    width: 19rem;
   }
 }
 
