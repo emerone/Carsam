@@ -12,17 +12,15 @@ const body = document.querySelector('body');
 
 const btns = document.querySelectorAll('main.catalogue > div > div > button')
 const imgs = document.querySelectorAll('main.catalogue > div > div > img')
-const btnsLink = [,]
-console.log(btnsLink)
 
-function linkToOpen(link){
-    console.log(link)
-    indow.open(link,'_blank');
-}
+const btnsOpinion = document.querySelectorAll('span > i')
+const containerOpinion = document.querySelector('main.accueil > div:nth-of-type(4) > div > div')
+
+console.log(containerOpinion)
 
 if ( window.location.hash == "#Catalogue"){
 
-    // !        With animation
+    // !        loading with animation
 
     // bClass = setTimeout(() => {
     //     if (body.classList == 'a'){
@@ -48,7 +46,7 @@ if ( window.location.hash == "#Catalogue"){
     //     }
     // }, 1000)
 
-    // !        Without animation 
+    // !        loading without animation 
 
     body.setAttribute("class", "b")
 
@@ -56,7 +54,7 @@ if ( window.location.hash == "#Catalogue"){
 
 if ( window.location.hash == "#%C3%80-propos"){
 
-    // !        With animation
+    // !        loading with animation
 
     // cClass = setTimeout(() => {
     //     if(body.className == "a"){
@@ -80,7 +78,7 @@ if ( window.location.hash == "#%C3%80-propos"){
     //     }   
     // },1000)
 
-    // !        Without animation 
+    // !        loading without animation 
 
     body.setAttribute("class", "c")
 
@@ -164,3 +162,29 @@ for(let i=0;i<navsApropos.length; i++){
     })
 }
 
+let i = 0
+const classes = "abcdefg"
+
+console.log(classes.length - 1)
+
+btnsOpinion[0].addEventListener("click", () => {
+    if(i == 0){
+        i = classes.length - 1
+        containerOpinion.setAttribute("class", classes[i])
+    }
+    else{
+        i--
+            containerOpinion.setAttribute("class", classes[i])
+    }
+})
+
+btnsOpinion[1].addEventListener("click", () => {
+    if(i == classes.length - 1){
+        i = 0
+        containerOpinion.setAttribute("class", classes[i])
+    }
+    else{
+        i++
+        containerOpinion.setAttribute("class", classes[i])
+    }
+})

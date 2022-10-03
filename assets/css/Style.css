@@ -40,7 +40,7 @@ html, body{
   --background-black: #1c1918;
   --base-color-light: #fffc;
   --base-color-dark: #000c;
-  --content-width: min(80rem, 100%);
+  --content-width: min(80rem, 100vw);
   --nav-height: 6rem;
   --animation-duration: 1s;
   scroll-behavior: smooth;
@@ -49,6 +49,7 @@ html, body{
   overflow-x: hidden;
   transition: height 1s ease;
 }
+
 
 @media (hover) {
 }
@@ -462,18 +463,88 @@ main.accueil > div:nth-of-type(4) > h2{
 }
 
 main.accueil > div:nth-of-type(4) > div{
-  --gap: 2rem;
-  --padding: 6rem;
+  position: relative;
+  --gap: 6rem;
+  --padding: 4rem;
+  --width: 28rem;
   display: flex;
   gap: var(--gap);
-  padding: var(--padding);
+  width: calc(var(--width) + var(--padding) * 2);
+  margin: 6rem auto;
+  overflow: hidden;
+}
+
+main.accueil > div:nth-of-type(4) > div > span:first-of-type{
+  position: absolute;
+  top: 0;
+  bottom: 0%;
+  left: 0%;
+  width: calc(var(--padding) - 2rem);
+  z-index: 10;
+  transition: all .2s .8s ease;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+main.accueil > div:nth-of-type(4) > div > span:last-of-type{
+  position: absolute;
+  top: 0;
+  bottom: 0%;
+  right: 0%;
+  width: calc(var(--padding) - 2rem);
+  z-index: 10;
+  transition: all .2s .8s ease;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+main.accueil > div:nth-of-type(4) > div > span > i {
+  font-size: 4rem;
+  transform: translate(-1rem);
+}
+
+main.accueil > div:nth-of-type(4) > div > div {
+  display: flex;
+  gap: var(--gap);
+  transition: all 1.5s ease;
+  padding-left: var(--padding);
+}
+
+main.accueil > div:nth-of-type(4) > div > div.a {
+  transform: translateX(0%);
+}
+
+main.accueil > div:nth-of-type(4) > div > div.b {
+  transform: translateX(calc(-1 * var(--width) - var(--gap) * 1) );
+}
+
+main.accueil > div:nth-of-type(4) > div > div.c {
+  transform: translateX(calc(-2 * var(--width) - var(--gap) * 2) );
+}
+
+main.accueil > div:nth-of-type(4) > div > div.d {
+  transform: translateX(calc(-3 * var(--width) - var(--gap) * 3) );
+}
+
+main.accueil > div:nth-of-type(4) > div > div.e {
+  transform: translateX(calc(-4 * var(--width) - var(--gap) * 4) );
+}
+
+main.accueil > div:nth-of-type(4) > div > div.f {
+  transform: translateX(calc(-5 * var(--width) - var(--gap) * 5) );
+}
+
+main.accueil > div:nth-of-type(4) > div > div.g {
+  transform: translateX(calc(-6 * var(--width) - var(--gap) * 6) );
 }
 
   /* avis */
 
 .cards{
   padding: 1.5rem;
-  width: 100%;
+  width: var(--width);
   display: flex;
   flex-direction: column;
 
@@ -831,11 +902,14 @@ main.catalogue > div > div > a::selection {
   main.accueil > div:nth-of-type(4) > h2{
     margin-bottom: 4rem;
   }
-  main.accueil > div:nth-of-type(4) > div{
-    --padding: 2rem;
-  }
   main.a-propos > div:first-of-type > div:last-of-type{
     transform: scale(.9);
+  }
+  main.accueil > div:nth-of-type(4) > div{
+    --width: 24rem;
+  }
+  .cards {
+    text-align: center;
   }
 }
 
@@ -857,9 +931,6 @@ main.catalogue > div > div > a::selection {
   main.accueil > div:nth-of-type(4) > h2{
     margin-block-end: 5rem;
   }
-  main.accueil > div:nth-of-type(4) > div{
-    --padding: 1rem;
-  }
   main.accueil > div:nth-of-type(1) > div{
     margin-bottom: 5rem;
   }
@@ -872,6 +943,15 @@ main.catalogue > div > div > a::selection {
   main.a-propos > div > div{
     width: 30rem;
   }
+  main.accueil > div:nth-of-type(4) > div{
+    --width: calc(100vw - 12rem);
+  }
+  .cards {
+    text-align: center;
+  }
+  .cards > div{
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width:468px) {
@@ -880,6 +960,9 @@ main.catalogue > div > div > a::selection {
   }
   main.a-propos > div > div{
     width: 19rem;
+  }
+  main.accueil > div:nth-of-type(4) > div{
+    --width: calc(100vw - 12rem);
   }
 }
 
