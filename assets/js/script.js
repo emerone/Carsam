@@ -167,19 +167,6 @@ for(let i=0;i<navsApropos.length; i++){
 let i = 0
 const classes = "abcdefg"
 
-console.log(classes.length - 1)
-
-btnsOpinion[0].addEventListener("click", () => {
-    if(i == 0){
-        i = classes.length - 1
-        containerOpinion.setAttribute("class", classes[i])
-    }
-    else{
-        i--
-            containerOpinion.setAttribute("class", classes[i])
-    }
-})
-
 function opinionFuction() {
     if(i == classes.length - 1){
         i = 0
@@ -191,7 +178,24 @@ function opinionFuction() {
     }
 }
 
+btnsOpinion[0].addEventListener("click", () => {
+    clearInterval(Interval)
+    
+    Interval = setInterval(() => {
+        opinionFuction()
+    }, 8000);
+    if(i == 0){
+        i = classes.length - 1
+        containerOpinion.setAttribute("class", classes[i])
+    }
+    else{
+        i--
+            containerOpinion.setAttribute("class", classes[i])
+    }
+})
+
 btnsOpinion[1].addEventListener("click", () => {
+    clearInterval(Interval)
     opinionFuction()
     
     Interval = setInterval(() => {
