@@ -2,15 +2,65 @@ const navAccueil = document.querySelector('a[href="#Accueil"]');
 const bodyAccueil = document.querySelector('main.accueil');
 
 const navCatalogue = document.querySelector('a[href="#Catalogue"]');
+const navsCatalogue = document.querySelectorAll('a[href="#Catalogue"]');
 const bodyCatalogue = document.querySelector('main.catalogue');
 
 const navApropos = document.querySelector('a[href="#À-propos"]');  
+const navsApropos = document.querySelectorAll('a[href="#À-propos"]');  
 const bodyApropos = document.querySelector('main.a-propos');  
 const body = document.querySelector('body');
 
-//     #Accueil
-//     #Catalogue
-//     #%C3%80-propos
+const catalogueFunc = "";
+
+if ( window.location.hash == "#Catalogue"){
+    bClass = setTimeout(() => {
+    
+        if (body.classList == 'a'){
+    
+            bodyCatalogue.classList.remove('from-left-start')
+            bodyAccueil.classList.add('to-left-end')
+            bodyCatalogue.classList.add('from-right-start')
+    
+            bodyAccueil.addEventListener("animationend", () => {
+                bodyAccueil.classList.remove('to-left-end')
+                body.setAttribute("class", "b")
+            },{once:true})
+        }
+        
+        if (body.classList == 'c'){
+    
+            bodyCatalogue.classList.remove('from-right-start')
+            bodyApropos.classList.add('to-right-end')
+            bodyCatalogue.classList.add('from-left-start')
+    
+            bodyApropos.addEventListener("animationend", () => {
+                bodyApropos.classList.remove('to-right-end')
+                body.setAttribute("class", "b")
+            },{once:true})
+        }
+    }, 1000)
+}
+if ( window.location.hash == "#%C3%80-propos"){
+    if(body.className == "a"){
+        bodyAccueil.classList.add('to-left-end')
+        bodyApropos.classList.add('from-right-start')
+        
+        bodyAccueil.addEventListener('animationend', () => {
+            bodyAccueil.classList.remove('to-left-end')
+            body.setAttribute("class", "c")
+        }, {once:true})
+    }    
+
+    if(body.className == "b"){
+        bodyCatalogue.classList.add('to-left-end')
+        bodyApropos.classList.add('from-right-start')
+        
+        bodyCatalogue.addEventListener('animationend', () => {
+            bodyCatalogue.classList.remove('to-left-end')
+            body.setAttribute("class", "c")
+        }, {once:true})
+    }   
+}
 
 navAccueil.addEventListener('click',() => {
     console.log(window.location.hash)
@@ -39,56 +89,55 @@ navAccueil.addEventListener('click',() => {
     }
 })
 
-navCatalogue.addEventListener('click',() => {
-    
-    if (body.classList == 'a'){
-
-        bodyCatalogue.classList.remove('from-left-start')
-        bodyAccueil.classList.add('to-left-end')
-        bodyCatalogue.classList.add('from-right-start')
-
-        bodyAccueil.addEventListener("animationend", () => {
-            bodyAccueil.classList.remove('to-left-end')
-            body.setAttribute("class", "b")
-        },{once:true})
-    }
-    
-    if (body.classList == 'c'){
-
-        bodyCatalogue.classList.remove('from-right-start')
-        bodyApropos.classList.add('to-right-end')
-        bodyCatalogue.classList.add('from-left-start')
-
-        bodyApropos.addEventListener("animationend", () => {
-            bodyApropos.classList.remove('to-right-end')
-            body.setAttribute("class", "b")
-        },{once:true})
-    }
-})
-
-navApropos.addEventListener('click',() => {
-    if(body.className == "a"){
-        bodyAccueil.classList.add('to-left-end')
-        bodyApropos.classList.add('from-right-start')
+for(let i = 0; i<navsCatalogue.length; i++){
+    navsCatalogue[i].addEventListener('click',() => {
         
-        bodyAccueil.addEventListener('animationend', () => {
-            bodyAccueil.classList.remove('to-left-end')
-            body.setAttribute("class", "c")
-        }, {once:true})
-    }    
-
-    if(body.className == "b"){
-        bodyCatalogue.classList.add('to-left-end')
-        bodyApropos.classList.add('from-right-start')
+        if (body.classList == 'a'){
+    
+            bodyCatalogue.classList.remove('from-left-start')
+            bodyAccueil.classList.add('to-left-end')
+            bodyCatalogue.classList.add('from-right-start')
+    
+            bodyAccueil.addEventListener("animationend", () => {
+                bodyAccueil.classList.remove('to-left-end')
+                body.setAttribute("class", "b")
+            },{once:true})
+        }
         
-        bodyCatalogue.addEventListener('animationend', () => {
-            bodyCatalogue.classList.remove('to-left-end')
-            body.setAttribute("class", "c")
-        }, {once:true})
-    }    
-})
+        if (body.classList == 'c'){
+    
+            bodyCatalogue.classList.remove('from-right-start')
+            bodyApropos.classList.add('to-right-end')
+            bodyCatalogue.classList.add('from-left-start')
+    
+            bodyApropos.addEventListener("animationend", () => {
+                bodyApropos.classList.remove('to-right-end')
+                body.setAttribute("class", "b")
+            },{once:true})
+        }
+    })
+}
 
-// 1 = ajouter une animation avec les class 
-// en fonction de la possition du main
-// 2 = changer la class recomencer  
-// 3 = class pour le milieu 
+for(let i=0;i<navsApropos.length; i++){
+    navsApropos[i].addEventListener('click',() => {
+        if(body.className == "a"){
+            bodyAccueil.classList.add('to-left-end')
+            bodyApropos.classList.add('from-right-start')
+            
+            bodyAccueil.addEventListener('animationend', () => {
+                bodyAccueil.classList.remove('to-left-end')
+                body.setAttribute("class", "c")
+            }, {once:true})
+        }    
+    
+        if(body.className == "b"){
+            bodyCatalogue.classList.add('to-left-end')
+            bodyApropos.classList.add('from-right-start')
+            
+            bodyCatalogue.addEventListener('animationend', () => {
+                bodyCatalogue.classList.remove('to-left-end')
+                body.setAttribute("class", "c")
+            }, {once:true})
+        }    
+    })
+}
