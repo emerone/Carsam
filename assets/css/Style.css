@@ -601,7 +601,8 @@ main.catalogue > div > div > img::selection{
   background: #0000;
 }
 
-main.catalogue > div > div > button {
+main.catalogue > div > div > a {
+  font-weight: 500;
   cursor: pointer;
   padding: .7rem 1rem;
   background: #3331;
@@ -615,7 +616,7 @@ main.catalogue > div > div > button {
   border-radius: .25rem;
 }
 
-main.catalogue > div > div > button:hover {
+main.catalogue > div > div > a:hover {
   background: #3332;
   color: #000f;
   width: 6.5em;
@@ -624,7 +625,7 @@ main.catalogue > div > div > button:hover {
   border: 1px #0000000a solid;
 }
 
-main.catalogue > div > div > button::selection {
+main.catalogue > div > div > a::selection {
   background: #0000;
 }
 
@@ -663,7 +664,7 @@ dialog > div > div > img::selection{
   background: #0000;
 }
 
-dialog > div > div > button {
+dialog > div > div > a {
   margin-top: .5rem;
   cursor: pointer;
   padding: .7rem 1rem;
@@ -678,11 +679,11 @@ dialog > div > div > button {
   border-radius: .25rem;
 }
 
-dialog > div > div > button::selection{
+dialog > div > div > a::selection{
   background: #0000;
 }
 
-dialog > div > div > button:hover {
+dialog > div > div > a:hover {
   background: #3332;
   color: #000f;
   width: 6.5em;
@@ -691,7 +692,7 @@ dialog > div > div > button:hover {
   border: 1px #0000000a solid;
 }
 
-main.catalogue > div > div > button::selection {
+main.catalogue > div > div > a::selection {
   background: #0000;
 }
 
@@ -839,6 +840,9 @@ main.catalogue > div > div > button::selection {
 }
 
 @media screen and (max-width:632px) {
+  header > div > div:first-of-type > h1{
+    font-size: 3rem;
+  }
   main.accueil > div:nth-of-type(3) > section:first-of-type{
     flex-direction: column;
     max-width: 18rem;
