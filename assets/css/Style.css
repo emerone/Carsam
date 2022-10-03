@@ -48,7 +48,6 @@ html, body{
   font-family: sans-serif;
   overflow-x: hidden;
   transition: height 1s ease;
-  height: -webkit-fill-available;
 }
 
 

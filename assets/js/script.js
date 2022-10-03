@@ -16,8 +16,6 @@ const imgs = document.querySelectorAll('main.catalogue > div > div > img')
 const btnsOpinion = document.querySelectorAll('span > i')
 const containerOpinion = document.querySelector('main.accueil > div:nth-of-type(4) > div > div')
 
-console.log(containerOpinion)
-
     //  ! laoding the good part when the web site laod or reload with hash
 
 if ( window.location.hash == "#Catalogue"){
