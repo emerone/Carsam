@@ -40,26 +40,30 @@ if ( window.location.hash == "#Catalogue"){
         }
     }, 1000)
 }
-if ( window.location.hash == "#%C3%80-propos"){
-    if(body.className == "a"){
-        bodyAccueil.classList.add('to-left-end')
-        bodyApropos.classList.add('from-right-start')
-        
-        bodyAccueil.addEventListener('animationend', () => {
-            bodyAccueil.classList.remove('to-left-end')
-            body.setAttribute("class", "c")
-        }, {once:true})
-    }    
 
-    if(body.className == "b"){
-        bodyCatalogue.classList.add('to-left-end')
-        bodyApropos.classList.add('from-right-start')
-        
-        bodyCatalogue.addEventListener('animationend', () => {
-            bodyCatalogue.classList.remove('to-left-end')
-            body.setAttribute("class", "c")
-        }, {once:true})
-    }   
+if ( window.location.hash == "#%C3%80-propos"){
+
+    cClass = setTimeout(() => {
+        if(body.className == "a"){
+            bodyAccueil.classList.add('to-left-end')
+            bodyApropos.classList.add('from-right-start')
+            
+            bodyAccueil.addEventListener('animationend', () => {
+                bodyAccueil.classList.remove('to-left-end')
+                body.setAttribute("class", "c")
+            }, {once:true})
+        }    
+    
+        if(body.className == "b"){
+            bodyCatalogue.classList.add('to-left-end')
+            bodyApropos.classList.add('from-right-start')
+            
+            bodyCatalogue.addEventListener('animationend', () => {
+                bodyCatalogue.classList.remove('to-left-end')
+                body.setAttribute("class", "c")
+            }, {once:true})
+        }   
+    },1000)
 }
 
 navAccueil.addEventListener('click',() => {
