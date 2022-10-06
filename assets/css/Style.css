@@ -464,12 +464,12 @@ main.accueil > div:nth-of-type(4) > h2{
 
 main.accueil > div:nth-of-type(4) > div{
   position: relative;
-  --gap: 10rem;
+  --gap: 5rem;
   --padding: 4rem;
   --width: 28rem;
   display: flex;
   gap: var(--gap);
-  width: calc(var(--width) + var(--padding) * 2);
+  width: calc(var(--width) * 2 + var(--padding) * 3);
   margin: 6rem auto;
   overflow: hidden;
 }
