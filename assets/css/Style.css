@@ -469,7 +469,7 @@ main.accueil > div:nth-of-type(4) > div{
   --width: 28rem;
   display: flex;
   gap: var(--gap);
-  width: calc(var(--width) * 2 + var(--padding) * 3);
+  width: calc(var(--width) * 2 + var(--padding) * 3.25);
   margin: 6rem auto;
   overflow: hidden;
 }
@@ -853,6 +853,12 @@ main.catalogue > div > div > a::selection {
 
 
           /* Responsive */
+
+@media screen and (max-width:1250px) {
+  main.accueil > div:nth-of-type(4) > div{
+    width: calc(var(--width) + var(--padding) * 2);
+  }
+}
 
 @media screen and (max-width:1094px) {
   header > div > div:last-of-type{
