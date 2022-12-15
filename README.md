@@ -1,10 +1,5 @@
 # Carsam
 
-Site web developé en HTML, CSS, JS
-(Il manque du texte mais achevé)
-
-# Carsam
-
 Website done in HTML, CSS, JS.
 
 ## Description
