@@ -4,13 +4,13 @@ Website done in HTML, CSS, JS.
 
 ## Description
 
-Web-app for a garage with exotic nav, modal system for interactivities.
+Web-app for a garage designed with a particular nav and a modal system for interactivities.
 
 ## Getting Started
 
 ### Dependencies
 
-* A conextion is requir to execute the load the font and images. 
+* Some images are stocked on an online server, as well as the font and the good map part. 
 
 ### Installing
 
