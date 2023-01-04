@@ -1,10 +1,8 @@
 # Carsam
 
-Website done in HTML, CSS, JS.
-
 ## Description
 
-Web-app for a garage designed with a particular nav and a modal system for interactivities.
+Web-app in HTML, CSS, JS for a garage designed with a particular nav and a modal system for interactivities.
 
 ## Getting Started
 
